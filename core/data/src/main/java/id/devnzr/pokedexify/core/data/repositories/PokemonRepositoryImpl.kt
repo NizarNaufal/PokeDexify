@@ -1,6 +1,5 @@
 package id.devnzr.pokedexify.core.data.repositories
 
-import id.devnzr.pokdexify.models.response.PokemonResponse
 import id.devnzr.pokedexify.core.data.api.PokemonApi
 import id.devnzr.pokedexify.core.data.ext.PokemonQueryParams.LIMIT
 import id.devnzr.pokedexify.core.data.ext.PokemonQueryParams.OFFSET
@@ -13,5 +12,5 @@ class PokemonRepositoryImpl(private val api: PokemonApi) : PokemonRepository {
             OFFSET to 0
         )
     )
-    override suspend fun fetchDetailPokemon(name: String): PokemonResponse = api.getDetailPokemon(name)
+    override suspend fun fetchDetailPokemon(name: String) = api.getDetailPokemon(name)
 }

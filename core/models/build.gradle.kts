@@ -25,5 +25,6 @@ android {
 }
 
 dependencies {
+    implementation(libs.bundles.coroutinesDependencies)
     implementation(libs.gson)
 }

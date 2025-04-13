@@ -51,4 +51,9 @@ android {
 dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.koinDependencies)
+    implementation(projects.core.data)
+    implementation(projects.core.domain)
+    implementation(projects.core.network)
+    implementation(projects.core.database)
+    implementation(projects.core.datastore)
 }

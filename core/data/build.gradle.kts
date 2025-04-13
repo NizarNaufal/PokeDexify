@@ -23,6 +23,7 @@ android {
 dependencies {
     implementation(libs.bundles.koinDependencies)
     implementation(libs.gson)
+    implementation(projects.core.database)
     implementation(projects.core.network)
     implementation(projects.core.datastore)
     implementation(projects.core.models)

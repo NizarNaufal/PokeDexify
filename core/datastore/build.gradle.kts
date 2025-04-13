@@ -23,7 +23,6 @@ dependencies {
     implementation(libs.androidx.datastore)
     implementation(libs.androidx.datastore.core)
     implementation(libs.protobuf.javalite)
-    implementation(libs.androidx.security.crypto.ktx)
 }
 
 protobuf {
