@@ -8,7 +8,7 @@ PokeDexify is a sleek and modern Android application crafted for Pokémon enthus
 - **Kotlin** – Modern, concise, and safe programming language for Android development.
 - **Coroutines** – Asynchronous programming for smooth, non-blocking operations.
 - **Jetpack Compose** – Declarative UI toolkit for native Android interfaces.
-- **SqLite** – SQLite abstraction layer for local persistence.
+- **SqLite** – SQLite for local persistence.
 - **Proto DataStore** – Typed and efficient data storage solution, replacing SharedPreferences.
 - **Coil** – Fast, lightweight image loading for Android.
 - **Custom Build Logic** – Convention-based Gradle plugins for simplified project setup.
