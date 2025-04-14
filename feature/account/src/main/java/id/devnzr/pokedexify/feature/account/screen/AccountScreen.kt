@@ -36,7 +36,7 @@ fun AccountScreen(state: AccountState) {
                 contentDescription = ""
             )
             Spacer(modifier = Modifier.size(12.dp))
-            Text(text = "Anonymous", style = MaterialTheme.typography.titleMedium)
+            Text(text = "Hi! ${state.resultUser.data}", style = MaterialTheme.typography.titleMedium)
         }
         HorizontalDivider(color = Black80)
         Column(
