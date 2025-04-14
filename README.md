@@ -22,7 +22,8 @@ PokeDexify is a sleek and modern Android application crafted for Pokémon enthus
 
     - `data/` - Repository implementations and interfaces
     - `datastore/` - Proto DataStore configuration and usage
-    - `domain/` - UseCases and domain models
+    - `domain/` - UseCases and domain
+    - `models/` For Handle Entities Request,Response,Result
     - `extension/` - Kotlin extension functions
     - `network/` - API configuration, service interfaces
 
