@@ -19,10 +19,6 @@ internal class HomeViewModel(
     private val _state = MutableStateFlow(HomeState())
     val state get() = _state.asStateFlow()
 
-    init {
-        getPokemonList()
-    }
-
     fun onEvent(event: UiEvent) {
         when (event) {
             is HomeEvent.OnGetAllData -> getPokemonList()

@@ -3,6 +3,7 @@ package id.devnzr.pokedexify.database.dao
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
+import id.devnzr.pokdexify.models.result.PokemonResult
 import id.devnzr.pokedexify.database.constant.PokemonConstant
 import id.devnzr.pokedexify.database.helper.PokemonDatabaseHelper
 

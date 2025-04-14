@@ -43,7 +43,7 @@ fun parseStatToColor(stat: StatResult): Color {
 }
 
 fun parseStatToAbbr(stat: StatResult): String {
-    return when (stat.stat?.name?.toLowerCase(Locale.ROOT)) {
+    return when (stat.stat?.name?.lowercase(Locale.ROOT)) {
         "hp" -> "HP"
         "attack" -> "Atk"
         "defense" -> "Def"

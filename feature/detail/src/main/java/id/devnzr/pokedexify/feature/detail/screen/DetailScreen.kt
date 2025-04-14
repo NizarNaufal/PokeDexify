@@ -79,6 +79,7 @@ fun DetailScreen(
         )
 
         PokemonDetailStateWrapper(
+            state = state,
             pokemonInfo = state.resultPokemonData,
             modifier = Modifier
                 .fillMaxSize()
@@ -155,6 +156,7 @@ fun PokemonDetailTopSection(
 
 @Composable
 fun PokemonDetailStateWrapper(
+    state: DetailState,
     pokemonInfo: ResultState<PokemonDetailResult>,
     modifier: Modifier = Modifier,
     loadingModifier: Modifier = Modifier
@@ -163,7 +165,8 @@ fun PokemonDetailStateWrapper(
         is ResultState.Success -> {
             PokemonDetailSection(
                 pokemonInfo = pokemonInfo.data!!,
-                modifier = modifier
+                modifier = modifier,
+                state = state
             )
         }
 
@@ -188,6 +191,7 @@ fun PokemonDetailStateWrapper(
 
 @Composable
 fun PokemonDetailSection(
+    state: DetailState,
     pokemonInfo: PokemonDetailResult,
     modifier: Modifier = Modifier
 ) {
@@ -221,7 +225,7 @@ fun PokemonDetailSection(
             pokemonWeight = pokemonInfo.weight,
             pokemonHeight = pokemonInfo.height
         )
-        PokemonBaseStats(pokemonInfo = pokemonInfo)
+        PokemonBaseStats(state = state, pokemonInfo = pokemonInfo)
     }
 }
 
@@ -313,6 +317,7 @@ fun PokemonDetailDataItem(
 
 @Composable
 fun PokemonStat(
+    state: DetailState,
     statName: String,
     statValue: Int,
     statMaxValue: Int,
@@ -336,7 +341,7 @@ fun PokemonStat(
         ),
         label = ""
     )
-    LaunchedEffect(key1 = true) {
+    LaunchedEffect(key1 = state.resultPokemonData is ResultState.Success) {
         animationPlayed = true
     }
     Box(
@@ -376,6 +381,7 @@ fun PokemonStat(
 
 @Composable
 fun PokemonBaseStats(
+    state: DetailState,
     pokemonInfo: PokemonDetailResult,
     animDelayPerItem: Int = 100
 ) {
@@ -399,7 +405,8 @@ fun PokemonBaseStats(
                 statValue = stat.baseStat,
                 statMaxValue = maxBaseStat,
                 statColor = parseStatToColor(stat),
-                animDelay = i * animDelayPerItem
+                animDelay = i * animDelayPerItem,
+                state = state
             )
             Spacer(modifier = Modifier.height(8.dp))
         }

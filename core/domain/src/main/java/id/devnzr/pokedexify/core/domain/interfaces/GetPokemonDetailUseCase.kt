@@ -5,5 +5,5 @@ import id.devnzr.pokdexify.models.result.ResultState
 import kotlinx.coroutines.flow.Flow
 
 interface GetPokemonDetailUseCase {
-    operator fun invoke(id: Long): Flow<ResultState<PokemonDetailResult>>
+    operator fun invoke(id: String): Flow<ResultState<PokemonDetailResult>>
 }

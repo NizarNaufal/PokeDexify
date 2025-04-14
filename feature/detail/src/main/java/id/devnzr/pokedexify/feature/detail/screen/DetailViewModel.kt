@@ -16,14 +16,14 @@ internal class DetailViewModel(
     val state get() = _state.asStateFlow()
 
     fun onEvent(uiEvent: UiEvent) {
-        when (uiEvent) {
-            is DetailEvent.OnGetDetail -> onGetDetail(uiEvent.id)
+        if (uiEvent is DetailEvent.OnGetDetail){
+            onGetDetail(uiEvent.id)
         }
     }
 
     private fun onGetDetail(id: String) {
         viewModelScope.launch {
-            getDetailPokemonUseCase(id.toLong()).collect { result ->
+            getDetailPokemonUseCase(id).collect { result ->
                 _state.update { it.copy(resultPokemonData = result) }
             }
         }

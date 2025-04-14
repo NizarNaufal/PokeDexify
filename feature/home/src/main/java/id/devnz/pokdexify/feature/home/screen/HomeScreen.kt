@@ -136,14 +136,18 @@ internal fun PokemonList(
 ) {
     val pokemonList = state.pokemonList.dataOrNull()?.items.orEmpty()
     LazyColumn(contentPadding = PaddingValues(16.dp)) {
-        val itemCount = pokemonList.size
-        items(itemCount) { index ->
-            if (index >= itemCount - 1 && !state.endReached && !state.isLoading && !state.isSearching) {
+        val rowCount = if (pokemonList.size % 2 == 0) {
+            pokemonList.size / 2
+        } else {
+            pokemonList.size / 2 + 1
+        }
+        items(rowCount) { rowIndex ->
+            if (rowIndex >= rowCount - 1 && !state.endReached && !state.isLoading && !state.isSearching) {
                 LaunchedEffect(key1 = true) {
                     onEvent(HomeEvent.OnLoadMore)
                 }
             }
-            PokedexRow(rowIndex = index, entries = pokemonList, onEvent = onEvent)
+            PokedexRow(rowIndex = rowIndex, entries = pokemonList, onEvent = onEvent)
         }
     }
 
@@ -158,6 +162,7 @@ internal fun PokemonList(
         }
     }
 }
+
 
 
 @Composable
@@ -191,10 +196,6 @@ internal fun PokedexEntry(
                 modifier = Modifier
                     .size(120.dp)
                     .align(CenterHorizontally)
-            )
-            CircularProgressIndicator(
-                color = MaterialTheme.colors.primary,
-                modifier = Modifier.scale(0.5f)
             )
             Text(
                 text = entry.name.orEmpty(),
