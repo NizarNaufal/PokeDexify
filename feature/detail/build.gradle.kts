@@ -25,6 +25,9 @@ android {
 dependencies {
     implementation(libs.bundles.koinDependencies)
     implementation(projects.core.domain)
+    implementation(projects.core.extension)
+    implementation(projects.core.uikit)
+    implementation(projects.core.models)
     implementation(libs.bundles.supportDependencies)
     implementation(libs.kotlinx.serialization.json)
 }

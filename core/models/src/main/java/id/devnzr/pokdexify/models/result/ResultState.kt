@@ -40,6 +40,12 @@ fun <T, R> ResultState<T>.map(transform: (T) -> R): ResultState<R> {
     }
 }
 
+fun <T> ResultState<T>.dataOrNull(): T? = when (this) {
+    is ResultState.Success -> data
+    else -> null
+}
+
+
 suspend fun <T> FlowCollector<ResultState<T>>.neutralize(
     value: ResultState<T>,
     previous: T? = null,
@@ -49,5 +55,5 @@ suspend fun <T> FlowCollector<ResultState<T>>.neutralize(
 
     delay(delay)
 
-    emit(id.devnzr.pokdexify.models.result.ResultState.Idle(previous = previous))
+    emit(ResultState.Idle(previous = previous))
 }

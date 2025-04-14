@@ -1,5 +1,6 @@
 package id.devnzr.pokedexify.core.data.repositories
 
+import id.devnzr.pokdexify.models.response.PrimitiveResponse
 import id.devnzr.pokedexify.core.data.interfaces.AuthRepository
 import id.devnzr.pokedexify.core.datastore.DataStoreManager
 import kotlinx.coroutines.flow.first
@@ -12,9 +13,14 @@ class AuthRepositoryImpl(
         return dataStore.isLoggedIn.first()
     }
 
+    override suspend fun getUser(): PrimitiveResponse<String> {
+        val username = dataStore.userName.first()
+        return PrimitiveResponse(data = username)
+    }
+
     override suspend fun deleteUser() = dataStore.clearData()
 
     override suspend fun login(userName: String, password: String) {
-       return dataStore.saveUser(userName)
+        return dataStore.saveUser(userName)
     }
 }
