@@ -10,7 +10,7 @@ data class PokemonResponse(
     val name: String?,
     @SerializedName("url")
     val url: String?
-): Response<PokemonResult>() {
+) : Response<PokemonResult>() {
     override fun map(): PokemonResult {
         return PokemonResult(
             id = id,
