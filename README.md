@@ -46,14 +46,18 @@ Each module is designed to be loosely coupled and independently testable. The pr
 
 ---
 
-## Video
+## 📸 **Screenshots**
+
+| Login Screen                           | Detail Page                            |
+|----------------------------------------|-----------------------------------------|
+| ![Login](https://github.com/user-attachments/assets/2b0cb0e0-a79d-4bb6-a779-16df4bb7a9e8) | ![Detail](https://github.com/user-attachments/assets/6c4a80f2-fbb1-4554-8881-716116e74bad) |
+
+| Search Page                            | Fun & Playful Interaction               |
+|----------------------------------------|-----------------------------------------|
+| ![Search](https://github.com/user-attachments/assets/f19d6225-6b5f-4f1e-998f-419e25a935c7) | ![Hi](https://github.com/user-attachments/assets/974fc6c3-e353-4201-8a11-c8754549e8a2) |
+
+---
 
 
-![Login Page![Searchh](https://github.com/user-attachments/assets/2b0cb0e0-a79d-4bb6-a779-16df4bb7a9e8)
-
-![Detail Page](https://github.com/user-attachments/assets/6c4a80f2-fbb1-4554-8881-716116e74bad)
-
-![Searchh](https://github.com/user-attachments/assets/f19d6225-6b5f-4f1e-998f-419e25a935c7)
-
-![Hi](https://github.com/user-attachments/assets/974fc6c3-e353-4201-8a11-c8754549e8a2)
-
+Crafted with ❤️ by an Android enthusiast.  
+_**Let the journey begin. Gotta catch 'em all!**_
