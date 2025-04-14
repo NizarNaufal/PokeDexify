@@ -30,7 +30,6 @@ import id.devnzr.pokedexify.feature.login.screen.components.CustomOutlinedTextFi
 @Composable
 fun LoginScreen(state: LoginState, onEvent: OnEvent) {
     Box {
-        BackgroundAppBar()
         Column(
             modifier = Modifier
                 .fillMaxSize(),
@@ -74,7 +73,7 @@ fun LoginScreen(state: LoginState, onEvent: OnEvent) {
                 })
 
                 CustomFilledButton(onClick = {
-
+                    onEvent(LoginEvent.OnSignInClick)
                 }, text = "Sign In")
             }
         }

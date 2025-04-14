@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
 class LoginUseCaseImpl(private val authRepository: AuthRepository) : LoginUseCase {
     override fun invoke(userName: String, password: String): Flow<ResultState<String>> =
         UseCaseDelegate.neutralizeResultFlow {
-            val result = authRepository.login(userName, password)
+            authRepository.login(userName, password)
             ResultState.Success(data = "Success")
         }
 }

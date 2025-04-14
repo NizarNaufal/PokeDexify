@@ -10,7 +10,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "id.devnzr.shopfinity"
+        applicationId = "id.devnzr.pokdexify"
         versionCode = 1
         versionName = "1.0"
         multiDexEnabled = true
@@ -56,4 +56,12 @@ dependencies {
     implementation(projects.core.network)
     implementation(projects.core.database)
     implementation(projects.core.datastore)
+    implementation(projects.core.models)
+    implementation(projects.core.extension)
+    implementation(projects.core.uikit)
+    implementation(projects.feature.home)
+    implementation(projects.feature.login)
+    implementation(projects.feature.detail)
+    implementation(projects.feature.account)
+    implementation(projects.feature.favorites)
 }

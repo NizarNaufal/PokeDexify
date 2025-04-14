@@ -32,7 +32,7 @@ fun DrawScope.drawRandomCurvedLine(
     val path = Path()
 
     path.moveTo(0f, startY)
-    path.quadraticBezierTo(curveX, curveY, canvas.size.width, endY)
+    path.quadraticTo(curveX, curveY, canvas.size.width, endY)
 
     drawPath(
         path = path,

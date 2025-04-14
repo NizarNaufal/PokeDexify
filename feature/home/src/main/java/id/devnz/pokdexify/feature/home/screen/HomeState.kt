@@ -5,7 +5,7 @@ import id.devnzr.pokdexify.models.result.PokemonResult
 import id.devnzr.pokdexify.models.result.ResultState
 
 data class HomeState(
-    val pokemonList: ResultState<PagingResult<PokemonResult>> = ResultState.Idle(),
+    val pokemonList: ResultState<PagingResult<PokemonResult>> = ResultState.Loading(),
     val cachedPokemonList: List<PokemonResult> = emptyList(),
     val endReached: Boolean = false,
     val isLoading: Boolean = false,

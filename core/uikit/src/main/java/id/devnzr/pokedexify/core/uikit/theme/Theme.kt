@@ -40,7 +40,6 @@ fun PokeDexifyTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
         content = content
     )
 }

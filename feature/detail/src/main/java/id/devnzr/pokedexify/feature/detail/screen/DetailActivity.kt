@@ -6,6 +6,9 @@ import androidx.activity.compose.setContent
 import id.devnzr.pokedexify.core.uikit.theme.PokeDexifyTheme
 
 class DetailActivity : ComponentActivity() {
+
+    val name by lazy { intent.getStringExtra(NAME).orEmpty()}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -13,5 +16,9 @@ class DetailActivity : ComponentActivity() {
                 DetailHost()
             }
         }
+    }
+
+    companion object {
+        const val NAME = "name"
     }
 }

@@ -5,5 +5,5 @@ import id.devnzr.pokdexify.models.result.ResultState
 
 data class DetailState(
     val isLoading: Boolean = false,
-    val resultPokemonData: ResultState<PokemonDetailResult> = ResultState.Idle()
+    val resultPokemonData: ResultState<PokemonDetailResult> = ResultState.Loading()
 )

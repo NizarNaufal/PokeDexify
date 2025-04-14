@@ -59,4 +59,3 @@ data class PaginateResponse<out T : Response<R>, R : Result>(
         )
     }
 }
-

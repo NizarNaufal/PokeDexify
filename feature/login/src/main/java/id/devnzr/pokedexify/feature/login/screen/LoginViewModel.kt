@@ -18,6 +18,7 @@ class LoginViewModel(private val loginUseCase: LoginUseCase) : ViewModel() {
         when (event) {
             is LoginEvent.OnNameChange -> updateUsername(event.email)
             is LoginEvent.OnPasswordChange -> updatePassword(event.password)
+            is LoginEvent.OnSignInClick -> handleSubmit()
             else -> Unit
         }
     }

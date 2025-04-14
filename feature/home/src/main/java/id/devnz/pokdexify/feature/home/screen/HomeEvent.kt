@@ -6,5 +6,5 @@ sealed class HomeEvent : UiEvent {
     data class OnSearch(val query: String) : HomeEvent()
     data object OnGetAllData : HomeEvent()
     data object OnLoadMore : HomeEvent()
-    data class OnNavigateToDetail(val id: String) : HomeEvent()
+    data class OnNavigateToDetail(val name: String) : HomeEvent()
 }
