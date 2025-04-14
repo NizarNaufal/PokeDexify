@@ -47,3 +47,14 @@ Each module is designed to be loosely coupled and independently testable. The pr
 ---
 
 ## Video
+
+
+![Login Page![Searchh](https://github.com/user-attachments/assets/2b0cb0e0-a79d-4bb6-a779-16df4bb7a9e8)
+
+
+https://github.com/user-attachments/assets/c885d259-4c8b-4536-90e4-f461ec07689d
+
+](https://github.com/user-attachments/assets/b6293d9c-6678-4d4f-bc92-75194fca0383)
+
+![ezgif-25fd2aa82f1e9e](https://github.com/user-attachments/assets/6c4a80f2-fbb1-4554-8881-716116e74bad)
+
