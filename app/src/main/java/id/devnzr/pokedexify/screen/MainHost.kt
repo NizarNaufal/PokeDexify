@@ -57,7 +57,7 @@ fun BottomNavigationBar(navController: NavHostController) {
             label = { Text("Home") },
             icon = {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_pokedox_on),
+                    painter = painterResource(id = R.drawable.ic_pokedox_off),
                     contentDescription = "Home"
                 )
             }
@@ -68,7 +68,7 @@ fun BottomNavigationBar(navController: NavHostController) {
             label = { Text("Account") },
             icon = {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_profile_on),
+                    painter = painterResource(id = R.drawable.ic_profile_off),
                     contentDescription = "Account"
                 )
             }
