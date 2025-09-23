@@ -29,11 +29,13 @@ import id.devnzr.pokedexify.feature.login.screen.components.CustomOutlinedTextFi
 
 @Composable
 fun LoginScreen(state: LoginState, onEvent: OnEvent) {
-    Box {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
         Column(
             modifier = Modifier
-                .fillMaxSize(),
-            verticalArrangement = Arrangement.Bottom
+                .fillMaxSize()
         ) {
             Column(
                 modifier = Modifier

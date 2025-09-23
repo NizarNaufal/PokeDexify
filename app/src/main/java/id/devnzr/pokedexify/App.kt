@@ -9,9 +9,11 @@ import id.devnzr.pokedexify.core.datastore.di.dataStoreModule
 import id.devnzr.pokedexify.core.domain.di.useCaseModule
 import id.devnzr.pokedexify.core.network.di.networkModule
 import id.devnzr.pokedexify.database.di.databaseModule
-import id.devnzr.pokedexify.di.splashViewModelModule
+import id.devnzr.pokedexify.di.navigationModule
+import id.devnzr.pokedexify.feature.splash.di.splashViewModelModule
 import id.devnzr.pokedexify.feature.account.di.accountViewModelModule
 import id.devnzr.pokedexify.feature.detail.di.detailViewModelModule
+import id.devnzr.pokedexify.feature.favorites.di.favoritesViewModelModule
 import id.devnzr.pokedexify.feature.login.di.loginViewModelModule
 import org.koin.core.context.GlobalContext.startKoin
 import org.koin.core.module.Module
@@ -30,6 +32,7 @@ class App : Application() {
     private fun initKoin(appModule: Module) = startKoin {
         modules(
             appModule,
+            navigationModule,
             databaseModule,
             dataStoreModule,
             dataSourceModule,
@@ -40,7 +43,8 @@ class App : Application() {
             loginViewModelModule,
             accountViewModelModule,
             detailViewModelModule,
-            homeViewModelModule
+            homeViewModelModule,
+            favoritesViewModelModule
         )
     }
 }

@@ -8,11 +8,12 @@ import id.devnzr.pokedexify.core.datastore.UserPreferences
 class DataStoreManager(private val dataStore: DataStore<UserPreferences>) {
 
     val isLoggedIn: Flow<Boolean> = dataStore.data.map { it.isLoggedIn }
-    val userName: Flow<String> = dataStore.data.map { it.userName }
 
-    suspend fun saveUser(userName: String) {
+    suspend fun setLoggedIn(isLoggedIn: Boolean) {
         dataStore.updateData { prefs ->
-            prefs.toBuilder().setUserName(userName).setIsLoggedIn(true).build()
+            prefs.toBuilder()
+                .setIsLoggedIn(isLoggedIn)
+                .build()
         }
     }
 

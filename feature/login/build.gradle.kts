@@ -28,6 +28,7 @@ dependencies {
     implementation(projects.core.extension)
     implementation(projects.core.uikit)
     implementation(projects.core.models)
+    implementation(projects.navigation)
     implementation(libs.bundles.supportDependencies)
     implementation(libs.kotlinx.serialization.json)
 }

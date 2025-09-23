@@ -10,6 +10,10 @@ class GetUserUseCaseImpl(private val authRepository: AuthRepository) : GetUserUs
     override fun invoke(): Flow<ResultState<String>> =
         UseCaseDelegate.neutralizeResultFlow {
             val result = authRepository.getUser()
-            ResultState.Success(data = result.data.orEmpty())
+            if (result.data == null) {
+                ResultState.Error(code = 400, message = "User not found", null)
+            } else {
+                ResultState.Success(data = result.data.orEmpty())
+            }
         }
 }

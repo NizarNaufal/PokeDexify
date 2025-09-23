@@ -32,7 +32,7 @@ android {
         debug {
             applicationIdSuffix = ".debug"
             versionNameSuffix = "-debug"
-            resValue("string", "app_name", "Shopfinity Debug")
+            resValue("string", "app_name", "Pokedexify Debug")
             manifestPlaceholders["appIcon"] = "@mipmap/ic_launcher_debug"
         }
     }
@@ -51,6 +51,7 @@ android {
 dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.bundles.koinDependencies)
+    implementation(projects.navigation)
     implementation(projects.core.data)
     implementation(projects.core.domain)
     implementation(projects.core.network)
@@ -64,4 +65,5 @@ dependencies {
     implementation(projects.feature.detail)
     implementation(projects.feature.account)
     implementation(projects.feature.favorites)
+    implementation(projects.feature.splash)
 }

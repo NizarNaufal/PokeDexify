@@ -1,38 +1,35 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    id("devnzr.android.library")
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "id.devnzr.pokedexify.database"
-    compileSdk = 34
-
-    defaultConfig {
-        minSdk = 24
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
+    compileSdk = libs.versions.compileSdk.get().toIntOrNull()
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
+        getByName("debug")
+        getByName("release")
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+
+    kotlin {
+        jvmToolchain(17)
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+
+    ksp {
+        arg("room.schemaLocation", "$projectDir/schemas")
     }
 }
 
 dependencies {
     implementation(libs.bundles.koinDependencies)
+    implementation(libs.androidx.room.ktx)
     implementation(projects.core.models)
+    api(libs.androidx.room.runtime)
+    ksp(libs.androidx.room.compiler)
+    implementation(libs.gson)
 }

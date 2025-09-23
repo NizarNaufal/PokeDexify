@@ -26,5 +26,6 @@ dependencies {
     implementation(libs.bundles.koinDependencies)
     implementation(projects.core.domain)
     implementation(libs.bundles.supportDependencies)
+    implementation(projects.core.extension)
     implementation(libs.kotlinx.serialization.json)
 }

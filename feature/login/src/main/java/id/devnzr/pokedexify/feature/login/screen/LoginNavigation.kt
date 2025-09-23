@@ -7,10 +7,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
+import id.devnzr.nzr.pokedex.navigation.AppNavigation
 import id.devnzr.pokdexify.models.result.ResultState
 import id.devnzr.pokedexify.core.extension.Screen
 import kotlinx.serialization.Serializable
 import org.koin.androidx.compose.koinViewModel
+import org.koin.compose.getKoin
 
 @Serializable
 data object LoginNavigation : Screen
@@ -20,9 +22,12 @@ fun NavGraphBuilder.loginScreen(navController: NavController) {
         val viewModel: LoginViewModel = koinViewModel()
         val state: LoginState by viewModel.state.collectAsStateWithLifecycle()
         val activity = LocalContext.current as LoginActivity
+        val appNavigator: AppNavigation = getKoin().get()
+        val context = LocalContext.current
+
         LaunchedEffect(state.resultLogin) {
             if (state.resultLogin is ResultState.Success){
-                activity.handleToMainActivity()
+                appNavigator.navigateToMain(context)
             }
         }
 

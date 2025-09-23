@@ -12,22 +12,19 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import id.devnz.pokdexify.feature.home.screen.HomeNavigation
 import id.devnz.pokdexify.feature.home.screen.homeScreen
-import id.devnzr.pokedexify.R
 import id.devnzr.pokedexify.feature.account.screen.AccountNavigation
 import id.devnzr.pokedexify.feature.account.screen.accountScreen
+import id.devnzr.pokedexify.core.uikit.R as RUIkit
 
 @Composable
 fun MainHost() {
     val navController = rememberNavController()
-    val activity = LocalContext.current as MainActivity
-
     Scaffold(
         bottomBar = {
             BottomNavigationBar(navController = navController)
@@ -38,11 +35,7 @@ fun MainHost() {
             startDestination = HomeNavigation::class.qualifiedName.orEmpty(),
             modifier = Modifier.padding(innerPadding).windowInsetsPadding(WindowInsets.systemBars)
         ) {
-            homeScreen(
-                onNavigateDetail = { name ->
-                    activity.handleNavigateToDetail(name)
-                }
-            )
+            homeScreen()
             accountScreen()
         }
     }
@@ -57,7 +50,7 @@ fun BottomNavigationBar(navController: NavHostController) {
             label = { Text("Home") },
             icon = {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_pokedox_off),
+                    painter = painterResource(id = RUIkit.drawable.ic_pokedox_off),
                     contentDescription = "Home"
                 )
             }
@@ -68,7 +61,7 @@ fun BottomNavigationBar(navController: NavHostController) {
             label = { Text("Account") },
             icon = {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_profile_off),
+                    painter = painterResource(id = RUIkit.drawable.ic_profile_off),
                     contentDescription = "Account"
                 )
             }
